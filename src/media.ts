@@ -1,18 +1,18 @@
 type MediaCallBack = () => void;
 type MediaOptions = {
   mach: MediaCallBack,
-  unMatch: MediaCallBack,
+  unmatch: MediaCallBack,
 }
 
 export class Media {
   private readonly mediaQuery: MediaQueryList;
   private mach?: MediaCallBack = undefined;
-  private unMatch?: MediaCallBack = undefined;
+  private unmatch?: MediaCallBack = undefined;
 
   constructor(query: string, options?: Partial<MediaOptions>) {
     this.mediaQuery = window.matchMedia(query);
     this.mach = options?.mach;
-    this.unMatch = options?.unMatch;
+    this.unmatch = options?.unmatch;
     this.register();
   }
 
@@ -22,7 +22,7 @@ export class Media {
         this.mach = callBack;
         break;
       case "unMach":
-        this.unMatch = callBack;
+        this.unmatch = callBack;
         break;
       default:
         new Error(`${type} does not exist`);
@@ -41,8 +41,8 @@ export class Media {
         this.mach();
       }
     } else {
-      if (this.unMatch) {
-        this.unMatch();
+      if (this.unmatch) {
+        this.unmatch();
       }
     }
   };
