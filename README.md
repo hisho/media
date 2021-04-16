@@ -21,7 +21,7 @@ new Media()
 query - `string`
 
 ```typescript
-import Media from "@hisho/media";
+import { Media } from "@hisho/media";
 
 const media = new Media(`(min-width: ${800 / 16}em)`, {
   mach: () => console.log('mach!'),

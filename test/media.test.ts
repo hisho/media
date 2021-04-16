@@ -1,4 +1,4 @@
-import Media from "../src";
+import {Media} from "../src";
 
 describe('Media', (): void => {
   beforeAll(() => {

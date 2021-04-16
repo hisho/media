@@ -1,10 +1,6 @@
-export type MediaCallBack = () => void;
-export type MediaOptions = {
-  mach: MediaCallBack,
-  unmatch: MediaCallBack,
-}
+import {MediaCallBack,MediaOptions} from './types';
 
-class Media {
+export class Media {
   private readonly mediaQuery: MediaQueryList;
   private mach?: MediaCallBack = undefined;
   private unmatch?: MediaCallBack = undefined;
@@ -65,5 +61,3 @@ class Media {
     }
   };
 }
-
-export default Media;
