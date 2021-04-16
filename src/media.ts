@@ -1,10 +1,10 @@
-type MediaCallBack = () => void;
-type MediaOptions = {
+export type MediaCallBack = () => void;
+export type MediaOptions = {
   mach: MediaCallBack,
   unmatch: MediaCallBack,
 }
 
-export class Media {
+class Media {
   private readonly mediaQuery: MediaQueryList;
   private mach?: MediaCallBack = undefined;
   private unmatch?: MediaCallBack = undefined;
@@ -65,3 +65,5 @@ export class Media {
     }
   };
 }
+
+export default Media;
