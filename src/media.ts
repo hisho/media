@@ -9,7 +9,9 @@ export class Media {
     this.mediaQuery = window.matchMedia(query);
     this.mach = options?.mach;
     this.unmatch = options?.unmatch;
+    //初回実装
     this.handler();
+    //イベントリスナ登録
     this.register();
   }
 
