@@ -1,6 +1,6 @@
 {
   "name": "@hisho/media",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "A simple media library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
