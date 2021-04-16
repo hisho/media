@@ -9,6 +9,7 @@ export class Media {
     this.mediaQuery = window.matchMedia(query);
     this.mach = options?.mach;
     this.unmatch = options?.unmatch;
+    this.handler();
     this.register();
   }
 
@@ -30,8 +31,8 @@ export class Media {
     return this.mediaQuery.matches;
   };
 
-  private readonly handler = (event: MediaQueryListEvent): void => {
-    const isMach = event.matches;
+  private readonly handler = (event?: MediaQueryListEvent): void => {
+    const isMach = event ? event.matches : this.isMatch();
     if (isMach) {
       if (this.mach) {
         this.mach();
